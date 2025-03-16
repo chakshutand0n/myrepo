@@ -10,7 +10,8 @@ on:
     outputs:
       greetingMessage: 
         description: 'Generated greeting message'
-        value: ${{ steps.greeting.outputs.message }}
+        value: ${{ jobs.greet.outputs.message }}
+        # value: ${{ steps.greeting.outputs.message }}
 
 jobs:
   greet:
