@@ -1,0 +1,11 @@
+# .github/workflows/calling_workflow.yml
+name: Calling Workflow
+run-name: Calling Workflow
+# on: [push]
+on: [workflow_dispatch, pull_request]
+
+jobs:
+  useCallable:
+    uses: ./.github/workflows/callable_workflow.yml
+    with:
+      name: 'Raman'
