@@ -1,0 +1,11 @@
+name: Second workflow
+run-name: Second workflow
+on: 
+  workflow_dispatch:
+jobs:
+  tag-image:
+    runs-on: ubuntu-latest
+    steps:
+    steps:
+      - id: commit
+        uses: prompt/actions-commit-hash@v3
