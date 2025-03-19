@@ -6,6 +6,5 @@ jobs:
   tag-image:
     runs-on: ubuntu-latest
     steps:
-    steps:
       - id: commit
         uses: prompt/actions-commit-hash@v3
