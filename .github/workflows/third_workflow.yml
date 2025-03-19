@@ -8,7 +8,11 @@ jobs:
     steps:
       - id: commit
         uses: prompt/actions-commit-hash@v3
-      - name: Build, tag, and push image to Amazon ECR
+      - name: "Get commit's short, long, HASH SHA strings"
         env:    
           SHORT: ${{ steps.commit.outputs.short }}
+          LONG: ${{ steps.commit.outputs.long }}
+          HASH: ${{ steps.commit.outputs.hash }}
         run: echo "$SHORT"
+        run: echo "$LONG"
+        run: echo "$HASH"
