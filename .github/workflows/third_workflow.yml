@@ -8,3 +8,7 @@ jobs:
     steps:
       - id: commit
         uses: prompt/actions-commit-hash@v3
+       - name: Build, tag, and push image to Amazon ECR
+        env:    
+          SHORT: ${{ steps.commit.outputs.short }}
+        run: echo "$SHORT"
