@@ -8,11 +8,15 @@ jobs:
     steps:
       - id: commit
         uses: prompt/actions-commit-hash@v3
-      - name: "Get commit's short, long, HASH SHA strings"
+      - name: "Get commit's short SHA string"
         env:    
           SHORT: ${{ steps.commit.outputs.short }}
-          LONG: ${{ steps.commit.outputs.long }}
-          HASH: ${{ steps.commit.outputs.hash }}
         run: echo "$SHORT"
+      - name: "Get commit's long SHA string"
+        env:    
+          LONG: ${{ steps.commit.outputs.long }}
         run: echo "$LONG"
+      - name: "Get commit's HASH SHA string"
+        env:    
+          HASH: ${{ steps.commit.outputs.hash }}
         run: echo "$HASH"
